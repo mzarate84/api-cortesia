@@ -1,0 +1,20 @@
+2023-03-13 08:07:52,068 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 14944 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-13 08:07:52,111 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-13 08:07:52,129 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-13 08:07:54,541 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 4.333 seconds (JVM running for 6.496)
+2023-03-13 08:07:54,546 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-13 09:29:15,550 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 12736 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-13 09:29:15,565 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-13 09:29:15,567 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-13 09:29:17,280 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 2.711 seconds (JVM running for 3.822)
+2023-03-13 09:29:17,285 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-13 11:56:28,138 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 15116 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-13 11:56:28,193 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-13 11:56:28,194 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-13 11:56:30,328 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 3.269 seconds (JVM running for 5.111)
+2023-03-13 11:56:30,330 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-13 14:01:22,343 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 19132 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-13 14:01:22,397 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-13 14:01:22,398 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-13 14:01:24,462 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 3.516 seconds (JVM running for 5.113)
+2023-03-13 14:01:24,465 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>

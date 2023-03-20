@@ -1,0 +1,1393 @@
+2023-03-14 09:57:23,864 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 09:57:23,897 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 9720 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 09:57:23,902 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 09:57:23,903 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 09:57:26,753 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 09:57:26,762 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 10:00:00,121 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 2452 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 10:00:00,125 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 10:00:00,126 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 10:00:00,126 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 10:00:02,312 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 10:00:02,320 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 10:34:55,782 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 17868 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 10:34:55,797 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 10:34:55,798 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 10:34:55,822 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 10:34:57,803 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 10:34:57,812 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 10:37:01,146 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 10:37:01,264 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 20340 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 10:37:01,266 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 10:37:01,271 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 10:37:03,403 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 10:37:03,422 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 10:53:36,905 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 9572 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 10:53:36,913 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 10:53:36,914 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 10:53:36,948 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 10:53:39,099 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 10:53:39,118 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 11:11:46,294 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-03-14 11:11:46,320 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication using Java 1.8.0_202 on MZARATE with PID 5128 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:11:46,321 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+2023-03-14 11:11:46,322 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:11:48,423 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:478)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 35 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 51 common frames omitted
+2023-03-14 11:11:48,432 WARN org.springframework.boot.SpringApplication [main] Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:747)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:746)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1670)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:659)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1300)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:914)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:902)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:889)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:830)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:349)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at py.com.nsa.cortesia.CortesiaApplication.main(CortesiaApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/filter/FormContentFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.filter.FormContentFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+2023-03-14 11:17:23,148 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 15936 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:17:23,206 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:17:23,208 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:17:28,778 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:17:28,803 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:17:28,804 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:17:28,827 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:17:29,130 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:17:30,163 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cortesiaResourse': Unsatisfied dependency expressed through field 'servi'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'py.com.nsa.cortesia.service.CortesiaService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-03-14 11:17:30,167 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2023-03-14 11:17:30,404 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field servi in py.com.nsa.cortesia.controller.cortesiaResourse required a bean of type 'py.com.nsa.cortesia.service.CortesiaService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'py.com.nsa.cortesia.service.CortesiaService' in your configuration.
+
+2023-03-14 11:19:27,032 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 16516 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:19:27,037 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:19:27,038 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:19:33,107 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:19:33,126 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:19:33,126 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:19:33,144 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:19:33,423 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:19:36,883 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:19:36,909 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 11:19:36,945 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 11.177 seconds (JVM running for 12.546)
+2023-03-14 11:19:36,950 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 11:19:56,615 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 7600 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:19:56,625 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:19:56,627 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:20:01,632 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:20:01,663 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:20:01,664 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:20:01,684 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:20:01,944 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:20:04,320 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:20:04,336 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 11:20:04,365 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 8.634 seconds (JVM running for 9.912)
+2023-03-14 11:20:04,368 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 11:21:54,742 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 11:21:55,253 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8081-exec-10] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'fechaIni' is not present]
+2023-03-14 11:25:14,943 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 15860 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:25:14,947 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:25:14,949 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:25:20,636 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:25:20,662 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:25:20,664 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:25:20,687 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:25:20,969 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:25:23,215 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:25:23,232 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 11:25:23,263 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 9.362 seconds (JVM running for 10.474)
+2023-03-14 11:25:23,268 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 11:27:21,840 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 11:27:21,983 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-10] ===> Filters=28459
+2023-03-14 11:27:22,007 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 11:27:23,805 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 11:27:23,910 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT SELECT * FROM cortesia c WHERE (c.fecha_grabacion >= to_date(?, 'yyyymmdd hh24:mi:ss') AND c.fecha_grabacion <= to_date(?, 'yyyymmdd hh24:mi:ss') AND c.nro_cortesia = ? AND c.cod_empleado = ? AND c.nombre_viajante like '%?%') 
+2023-03-14 11:27:24,209 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='nombre', mode=IN, javaType=class java.lang.String, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #5 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.sql.SQLException: Índice de columna no válido] with root cause
+java.sql.SQLException: Índice de columna no válido
+	at oracle.jdbc.driver.OraclePreparedStatement.setFormOfUseInternal(OraclePreparedStatement.java:10797)
+	at oracle.jdbc.driver.OraclePreparedStatement.setFormOfUseInternal(OraclePreparedStatement.java:10778)
+	at oracle.jdbc.driver.OraclePreparedStatement.setString(OraclePreparedStatement.java:5070)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.setString(OraclePreparedStatementWrapper.java:248)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setString(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:67)
+	at com.sun.proxy.$Proxy80.setString(Unknown Source)
+	at org.apache.ibatis.type.StringTypeHandler.setNonNullParameter(StringTypeHandler.java:31)
+	at org.apache.ibatis.type.StringTypeHandler.setNonNullParameter(StringTypeHandler.java:26)
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:69)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:87)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:88)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy61.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy66.selectByCortesia(Unknown Source)
+	at py.com.nsa.cortesia.service.CortesiaService.lisCortesia(CortesiaService.java:24)
+	at py.com.nsa.cortesia.service.CortesiaService$$FastClassBySpringCGLIB$$9a0091d2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at py.com.nsa.cortesia.service.CortesiaService$$EnhancerBySpringCGLIB$$d81fa4c5.lisCortesia(<generated>)
+	at py.com.nsa.cortesia.controller.cortesiaResourse.listCortesia(cortesiaResourse.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2023-03-14 11:28:31,111 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8081-exec-7] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'nombre' is not present]
+2023-03-14 11:30:02,375 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 3676 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:30:02,379 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:30:02,381 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:30:07,032 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:30:07,060 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:30:07,061 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:30:07,083 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:30:07,342 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:30:09,696 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:30:09,714 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 11:30:09,746 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 8.415 seconds (JVM running for 9.589)
+2023-03-14 11:30:09,751 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 11:30:19,850 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 11:30:19,964 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-10] ===> Filters=28459
+2023-03-14 11:30:19,980 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 11:30:22,136 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 11:30:22,229 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT SELECT * FROM cortesia c WHERE (c.nro_cortesia = ?) 
+2023-03-14 11:30:22,443 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==> Parameters: 28459(Long)
+2023-03-14 11:30:22,632 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00936: falta una expresión
+
+### The error may exist in py/com/nsa/cortesia/repository/mapper/CortesiaMapper.java (best guess)
+### The error may involve py.com.nsa.cortesia.repository.mapper.CortesiaMapper.selectByCortesia-Inline
+### The error occurred while setting parameters
+### SQL: SELECT SELECT * FROM cortesia c WHERE (c.nro_cortesia = ?)
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00936: falta una expresión
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00936: falta una expresión
+] with root cause
+oracle.jdbc.OracleDatabaseException: ORA-00936: falta una expresión
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:637)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:564)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1151)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:771)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:299)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:498)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:152)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:937)
+	at oracle.jdbc.driver.OracleStatement.prepareDefineBufferAndExecute(OracleStatement.java:1172)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1101)
+	at oracle.jdbc.driver.OracleStatement.executeSQLSelect(OracleStatement.java:1426)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1309)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3746)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3941)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1010)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy79.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy61.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy66.selectByCortesia(Unknown Source)
+	at py.com.nsa.cortesia.service.CortesiaService.lisCortesia(CortesiaService.java:24)
+	at py.com.nsa.cortesia.service.CortesiaService$$FastClassBySpringCGLIB$$9a0091d2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at py.com.nsa.cortesia.service.CortesiaService$$EnhancerBySpringCGLIB$$71a3f76.lisCortesia(<generated>)
+	at py.com.nsa.cortesia.controller.cortesiaResourse.listCortesia(cortesiaResourse.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2023-03-14 11:52:11,060 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 19664 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 11:52:11,066 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 11:52:11,067 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 11:52:16,618 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:52:16,643 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 11:52:16,644 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 11:52:16,679 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 11:52:17,080 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 11:52:20,329 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 11:52:20,356 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 11:52:20,402 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 10.621 seconds (JVM running for 11.915)
+2023-03-14 11:52:20,405 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 11:52:45,931 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 11:52:46,074 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-10] ===> Filters=28459
+2023-03-14 11:52:46,101 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 11:52:48,305 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 11:52:48,454 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT c.* FROM cortesia c WHERE (c.nro_cortesia = ?) 
+2023-03-14 11:52:48,701 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==> Parameters: 28459(Long)
+2023-03-14 11:52:48,847 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, NOMBRE_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 11:52:48,849 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==        Row: 28459, F, 3.611.056, Larizza Lisboa , pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 11:52:49,094 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: Error attempting to get column 'CONFIRMACION' from result set.  Cause: java.sql.SQLException: Fallo al convertir a representación interna
+; uncategorized SQLException; SQL state [99999]; error code [17059]; Fallo al convertir a representación interna; nested exception is java.sql.SQLException: Fallo al convertir a representación interna] with root cause
+java.sql.SQLException: Fallo al convertir a representación interna
+	at oracle.jdbc.driver.CharCommonAccessor.getInt(CharCommonAccessor.java:154)
+	at oracle.jdbc.driver.T4CVarcharAccessor.getInt(T4CVarcharAccessor.java:529)
+	at oracle.jdbc.driver.GeneratedStatement.getInt(GeneratedStatement.java:172)
+	at oracle.jdbc.driver.GeneratedScrollableResultSet.getInt(GeneratedScrollableResultSet.java:270)
+	at oracle.jdbc.driver.GeneratedResultSet.getInt(GeneratedResultSet.java:622)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getInt(HikariProxyResultSet.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.ResultSetLogger.invoke(ResultSetLogger.java:69)
+	at com.sun.proxy.$Proxy80.getInt(Unknown Source)
+	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:37)
+	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:26)
+	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:81)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getPropertyMappingValue(DefaultResultSetHandler.java:472)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyPropertyMappings(DefaultResultSetHandler.java:441)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:404)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:354)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:328)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:301)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:194)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy61.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy66.selectByCortesia(Unknown Source)
+	at py.com.nsa.cortesia.service.CortesiaService.lisCortesia(CortesiaService.java:24)
+	at py.com.nsa.cortesia.service.CortesiaService$$FastClassBySpringCGLIB$$9a0091d2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at py.com.nsa.cortesia.service.CortesiaService$$EnhancerBySpringCGLIB$$96643d1f.lisCortesia(<generated>)
+	at py.com.nsa.cortesia.controller.cortesiaResourse.listCortesia(cortesiaResourse.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2023-03-14 13:43:43,835 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 15188 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 13:43:43,839 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 13:43:43,841 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 13:43:50,463 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:43:50,483 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 13:43:50,483 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 13:43:50,503 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 13:43:50,786 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 13:43:54,033 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:43:54,052 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 13:43:54,091 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 11.706 seconds (JVM running for 13.38)
+2023-03-14 13:43:54,096 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 13:43:59,438 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 13:43:59,596 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-10] ===> Filters=28459
+2023-03-14 13:43:59,621 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 13:44:02,354 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 13:44:02,455 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT c.nro_cortesia, c.identificador, c.documento_viajante, c.observacion, c.fecha_grabacion, c.confirmacion, c.fecha_confirmacion, c.porcentaje_des, c.fecha_autorizacion, c.cod_empleado, c.cod_agencia, c.cod_cargo, c.cod_servicio_buses, c.cod_ruta_ida, c.cod_ruta_vuelta, c.cod_usuario_grabacion, c.cod_usuario_autoriza, c.fecha_viaje, c.impreso, c.nro_impresion, c.cantidad_pasaje, c.solicitante_externo, c.fecha_modifi, c.fecha_anulacion, c.cod_usuario_modifi, c.cod_usuario_anulacion FROM cortesia c WHERE (c.nro_cortesia = ?) 
+2023-03-14 13:44:02,718 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==> Parameters: 28459(Long)
+2023-03-14 13:44:02,936 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 13:44:02,992 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==        Row: 28459, F, 3.611.056, pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 13:44:03,185 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.UncategorizedSQLException: Error attempting to get column 'CONFIRMACION' from result set.  Cause: java.sql.SQLException: Fallo al convertir a representación interna
+; uncategorized SQLException; SQL state [99999]; error code [17059]; Fallo al convertir a representación interna; nested exception is java.sql.SQLException: Fallo al convertir a representación interna] with root cause
+java.sql.SQLException: Fallo al convertir a representación interna
+	at oracle.jdbc.driver.CharCommonAccessor.getInt(CharCommonAccessor.java:154)
+	at oracle.jdbc.driver.T4CVarcharAccessor.getInt(T4CVarcharAccessor.java:529)
+	at oracle.jdbc.driver.GeneratedStatement.getInt(GeneratedStatement.java:172)
+	at oracle.jdbc.driver.GeneratedScrollableResultSet.getInt(GeneratedScrollableResultSet.java:270)
+	at oracle.jdbc.driver.GeneratedResultSet.getInt(GeneratedResultSet.java:622)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getInt(HikariProxyResultSet.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.ResultSetLogger.invoke(ResultSetLogger.java:69)
+	at com.sun.proxy.$Proxy80.getInt(Unknown Source)
+	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:37)
+	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:26)
+	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:81)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getPropertyMappingValue(DefaultResultSetHandler.java:472)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyPropertyMappings(DefaultResultSetHandler.java:441)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:404)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:354)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:328)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:301)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:194)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy61.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy66.selectByCortesia(Unknown Source)
+	at py.com.nsa.cortesia.service.CortesiaService.lisCortesia(CortesiaService.java:24)
+	at py.com.nsa.cortesia.service.CortesiaService$$FastClassBySpringCGLIB$$9a0091d2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at py.com.nsa.cortesia.service.CortesiaService$$EnhancerBySpringCGLIB$$63c34793.lisCortesia(<generated>)
+	at py.com.nsa.cortesia.controller.cortesiaResourse.listCortesia(cortesiaResourse.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2023-03-14 13:46:30,594 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 12904 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 13:46:30,597 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 13:46:30,601 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 13:46:36,261 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:46:36,280 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 13:46:36,281 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 13:46:36,302 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 13:46:36,528 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 13:46:39,547 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:46:39,567 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 13:46:39,599 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 10.752 seconds (JVM running for 12.219)
+2023-03-14 13:46:39,603 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 13:46:46,635 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-9] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 13:46:46,742 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-9] ===> Filters=28459
+2023-03-14 13:46:46,761 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-9] HikariPool-1 - Starting...
+2023-03-14 13:46:48,723 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-9] HikariPool-1 - Start completed.
+2023-03-14 13:46:48,803 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] ==>  Preparing: SELECT c.nro_cortesia, c.identificador, c.documento_viajante, c.observacion, c.fecha_grabacion, c.confirmacion, c.fecha_confirmacion, c.porcentaje_des, c.fecha_autorizacion, c.cod_empleado, c.cod_agencia, c.cod_cargo, c.cod_servicio_buses, c.cod_ruta_ida, c.cod_ruta_vuelta, c.cod_usuario_grabacion, c.cod_usuario_autoriza, c.fecha_viaje, c.impreso, c.nro_impresion, c.cantidad_pasaje, c.solicitante_externo, c.fecha_modifi, c.fecha_anulacion, c.cod_usuario_modifi, c.cod_usuario_anulacion FROM cortesia c WHERE (c.nro_cortesia = ?) 
+2023-03-14 13:46:49,062 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] ==> Parameters: 28459(Long)
+2023-03-14 13:46:49,270 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 13:46:49,272 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==        Row: 28459, F, 3.611.056, pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 13:46:49,278 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==      Total: 1
+2023-03-14 13:49:18,206 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 15572 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 13:49:18,210 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 13:49:18,211 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 13:49:23,256 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:49:23,281 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 13:49:23,282 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 13:49:23,311 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 13:49:23,575 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 13:49:25,598 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 13:49:25,617 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 13:49:25,652 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 8.564 seconds (JVM running for 9.895)
+2023-03-14 13:49:25,655 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 13:49:29,123 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 13:49:29,277 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-10] ===> Filters=28459
+2023-03-14 13:49:29,298 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 13:49:31,639 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 13:49:31,773 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT c.nro_cortesia, c.identificador, c.documento_viajante, c.observacion, c.fecha_grabacion, c.confirmacion, c.fecha_confirmacion, c.porcentaje_des, c.fecha_autorizacion, c.cod_empleado, c.cod_agencia, c.cod_cargo, c.cod_servicio_buses, c.cod_ruta_ida, c.cod_ruta_vuelta, c.cod_usuario_grabacion, c.cod_usuario_autoriza, c.fecha_viaje, c.impreso, c.nro_impresion, c.cantidad_pasaje, c.solicitante_externo, c.fecha_modifi, c.fecha_anulacion, c.cod_usuario_modifi, c.cod_usuario_anulacion FROM cortesia c WHERE (c.nro_cortesia = ?) 
+2023-03-14 13:49:32,072 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==> Parameters: 28459(Long)
+2023-03-14 13:49:32,286 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 13:49:32,296 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==        Row: 28459, F, 3.611.056, pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 13:49:32,318 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==      Total: 1
+2023-03-14 13:52:46,903 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-6] ===> Filters=null
+2023-03-14 13:52:46,907 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] ==>  Preparing: SELECT c.nro_cortesia, c.identificador, c.documento_viajante, c.observacion, c.fecha_grabacion, c.confirmacion, c.fecha_confirmacion, c.porcentaje_des, c.fecha_autorizacion, c.cod_empleado, c.cod_agencia, c.cod_cargo, c.cod_servicio_buses, c.cod_ruta_ida, c.cod_ruta_vuelta, c.cod_usuario_grabacion, c.cod_usuario_autoriza, c.fecha_viaje, c.impreso, c.nro_impresion, c.cantidad_pasaje, c.solicitante_externo, c.fecha_modifi, c.fecha_anulacion, c.cod_usuario_modifi, c.cod_usuario_anulacion FROM cortesia c WHERE (c.fecha_grabacion >= to_date(?, 'yyyymmdd hh24:mi:ss') AND c.fecha_grabacion <= to_date(?, 'yyyymmdd hh24:mi:ss')) 
+2023-03-14 13:52:46,909 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] ==> Parameters: 20230301 00:00:00(String), 20230301 23:59:59(String)
+2023-03-14 13:52:46,919 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 13:52:46,921 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] <==        Row: 28458, F,  5386489, funcionario de logistica, 2023-03-01 16:38:48, S, 2023-03-01 16:38:48, 100, 2023-03-01 14:13:36, 6607, 318, 38, 3, 473, 474, 785, 785, 2023-03-06 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 13:52:46,924 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] <==        Row: 28459, F, 3.611.056, pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 13:52:46,926 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-6] <==      Total: 2
+2023-03-14 14:29:14,474 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 7208 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 14:29:14,527 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 14:29:14,528 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 14:29:20,494 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:29:20,515 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 14:29:20,516 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 14:29:20,536 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 14:29:20,788 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 14:29:23,410 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:29:23,426 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 14:29:23,455 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 10.332 seconds (JVM running for 11.751)
+2023-03-14 14:29:23,459 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 14:30:06,229 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-7] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 14:30:06,343 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-7] HikariPool-1 - Starting...
+2023-03-14 14:30:08,173 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-7] HikariPool-1 - Start completed.
+2023-03-14 14:30:08,241 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-7] ==>  Preparing: SELECT (MAX(c.nro_cortesia)+1) nrocortesia FROM cortesia c 
+2023-03-14 14:30:08,432 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-7] ==> Parameters: 
+2023-03-14 14:30:08,570 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-7] <==    Columns: NROCORTESIA
+2023-03-14 14:30:08,583 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-7] <==        Row: 28460
+2023-03-14 14:30:08,587 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-7] <==      Total: 1
+2023-03-14 14:31:43,010 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 16908 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 14:31:43,015 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 14:31:43,017 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 14:31:47,802 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:31:47,821 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 14:31:47,822 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 14:31:47,841 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 14:31:48,048 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 14:31:50,039 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:31:50,055 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 14:31:50,087 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 8.216 seconds (JVM running for 9.324)
+2023-03-14 14:31:50,091 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 14:31:54,202 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 14:31:54,308 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Starting...
+2023-03-14 14:31:56,463 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-10] HikariPool-1 - Start completed.
+2023-03-14 14:31:56,567 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==>  Preparing: SELECT (MAX(c.nro_cortesia)+1) nrocortesia FROM cortesia c 
+2023-03-14 14:31:56,883 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] ==> Parameters: 
+2023-03-14 14:31:57,132 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==    Columns: NROCORTESIA
+2023-03-14 14:31:57,154 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==        Row: 28460
+2023-03-14 14:31:57,162 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-10] <==      Total: 1
+2023-03-14 14:33:28,680 INFO org.springframework.boot.StartupInfoLogger [main] Starting CortesiaApplication on MZARATE with PID 11008 (D:\Backend\cortesia\target\classes started by MZarate in D:\Backend\cortesia)
+2023-03-14 14:33:28,686 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2023-03-14 14:33:28,691 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-03-14 14:33:35,357 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:33:35,378 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-03-14 14:33:35,379 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.34
+2023-03-14 14:33:35,398 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\10.1.0\Client_2\bin;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_2\jre\1.4.2\bin;D:\Oracle\product\11.2.0\client_1\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;%M2_HOME%\bin;D:\nodejs\;D:\XAMPP\php;C:\ProgramData\ComposerSetup\bin;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MZarate\AppData\Local\Programs\Python\Python310\;C:\Users\MZarate\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\MZarate\AppData\Roaming\npm;C:\Users\MZarate\AppData\Roaming\Composer\vendor\bin;C:\Maven\apache-maven-3.8.1\bin;;.]
+2023-03-14 14:33:35,686 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2023-03-14 14:33:38,232 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-03-14 14:33:38,253 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2023-03-14 14:33:38,293 INFO org.springframework.boot.StartupInfoLogger [main] Started CortesiaApplication in 10.689 seconds (JVM running for 12.666)
+2023-03-14 14:33:38,297 INFO py.com.nsa.cortesia.CortesiaApplication [main] <=== py.com.nsa.cortesia.CortesiaApplication Iniciado correctamente ===>
+2023-03-14 14:33:44,797 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-9] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14 14:33:44,877 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-9] HikariPool-1 - Starting...
+2023-03-14 14:33:46,673 INFO com.zaxxer.hikari.HikariDataSource [http-nio-8081-exec-9] HikariPool-1 - Start completed.
+2023-03-14 14:33:46,734 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] ==>  Preparing: SELECT (MAX(c.nro_cortesia)+1) nrocortesia FROM cortesia c 
+2023-03-14 14:33:47,017 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] ==> Parameters: 
+2023-03-14 14:33:47,168 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==    Columns: NROCORTESIA
+2023-03-14 14:33:47,180 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==        Row: 28460
+2023-03-14 14:33:47,184 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-9] <==      Total: 1
+2023-03-14 14:33:50,909 INFO py.com.nsa.cortesia.controller.cortesiaResourse [http-nio-8081-exec-8] ===> Filters=null
+2023-03-14 14:33:50,925 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] ==>  Preparing: SELECT c.nro_cortesia, c.identificador, c.documento_viajante, c.observacion, c.fecha_grabacion, c.confirmacion, c.fecha_confirmacion, c.porcentaje_des, c.fecha_autorizacion, c.cod_empleado, c.cod_agencia, c.cod_cargo, c.cod_servicio_buses, c.cod_ruta_ida, c.cod_ruta_vuelta, c.cod_usuario_grabacion, c.cod_usuario_autoriza, c.fecha_viaje, c.impreso, c.nro_impresion, c.cantidad_pasaje, c.solicitante_externo, c.fecha_modifi, c.fecha_anulacion, c.cod_usuario_modifi, c.cod_usuario_anulacion FROM cortesia c WHERE (c.fecha_grabacion >= to_date(?, 'yyyymmdd hh24:mi:ss') AND c.fecha_grabacion <= to_date(?, 'yyyymmdd hh24:mi:ss')) 
+2023-03-14 14:33:50,929 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] ==> Parameters: 20230301 00:00:00(String), 20230301 23:59:59(String)
+2023-03-14 14:33:50,945 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] <==    Columns: NRO_CORTESIA, IDENTIFICADOR, DOCUMENTO_VIAJANTE, OBSERVACION, FECHA_GRABACION, CONFIRMACION, FECHA_CONFIRMACION, PORCENTAJE_DES, FECHA_AUTORIZACION, COD_EMPLEADO, COD_AGENCIA, COD_CARGO, COD_SERVICIO_BUSES, COD_RUTA_IDA, COD_RUTA_VUELTA, COD_USUARIO_GRABACION, COD_USUARIO_AUTORIZA, FECHA_VIAJE, IMPRESO, NRO_IMPRESION, CANTIDAD_PASAJE, SOLICITANTE_EXTERNO, FECHA_MODIFI, FECHA_ANULACION, COD_USUARIO_MODIFI, COD_USUARIO_ANULACION
+2023-03-14 14:33:50,948 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] <==        Row: 28458, F,  5386489, funcionario de logistica, 2023-03-01 16:38:48, S, 2023-03-01 16:38:48, 100, 2023-03-01 14:13:36, 6607, 318, 38, 3, 473, 474, 785, 785, 2023-03-06 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 14:33:50,952 TRACE org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] <==        Row: 28459, F, 3.611.056, pedido de rrhh, 2023-03-01 17:16:24, S, 2023-03-01 17:16:24, 100, 2023-03-01 14:17:17, 22363, 298, 36, 2, 478, 481, 785, 785, 2023-03-01 00:00:00, N, 0, 1, null, null, null, null, null
+2023-03-14 14:33:50,956 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger [http-nio-8081-exec-8] <==      Total: 2
